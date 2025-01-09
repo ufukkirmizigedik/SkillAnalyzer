@@ -1,0 +1,140 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Сайт для начинающих аналитиков. Загрузите ваш Jupyter Notebook и получите подробный анализ.">
+     <meta name="keywords" content="анализ данных, Jupyter Notebook, Python, визуализация, обучение аналитике,наставник">
+    <title>Анализ Jupyter Notebook онлайн</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: #fff;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* İki başlığı hizalamak için */
+            background-color: #ffffff;
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+        }
+        .form-section,
+        .description-section {
+            width: 47%;
+        }
+        .form-section h1,
+        .description-section h2 {
+            font-size: 2.2rem;
+            color: #007bff;
+            margin-bottom: 30px;
+            text-align: left; /* Başlıkları hizalar */
+        }
+        .form-control {
+            border-radius: 10px;
+            height: 70px;
+            font-size: 1.1rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .description-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .description-section ul {
+            padding-left: 20px;
+            text-align: left; /* Liste elemanlarını sola hizalar */
+        }
+        .description-section ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #0056b3;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        footer a {
+            color: #00b4d8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Sol Taraf: Form -->
+        <div class="form-section">
+            <h1>Войти</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Имя пользователя</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Войти</button>
+            </form>
+        </div>
+
+        <!-- Sağ Taraf: Açıklama -->
+        <div class="description-section">
+            <h2>О нашем сайте</h2>
+            <p>
+                Этот сайт создан для начинающих аналитиков, чтобы помочь им улучшить свои навыки анализа данных.
+                С его помощью вы можете:
+            </p>
+            <ul>
+                <li>Анализировать свои Jupyter Notebook файлы.</li>
+                <li>Получать обратную связь о своих сильных и слабых сторонах.</li>
+                <li>Узнать, какие навыки требуют улучшения.</li>
+                <li>Развивать профессиональные навыки анализа данных.</li>
+            </ul>
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Свяжитесь со мной через Telegram: 
+            <a href="https://t.me/K_Ufuk" target="_blank">Написать в Telegram</a>
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
