@@ -83,7 +83,7 @@ EMAIL_USE_TLS=True
 
 ## Скриншоты
 ### Login Page
-![Login](media/img/login_page.png)
+![Login](media/img/login.png)
 
 ### Register Page
-![Register](media/img/register_page.png)
+![Register](media/img/register.png)
