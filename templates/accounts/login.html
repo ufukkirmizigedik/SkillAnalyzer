@@ -3,10 +3,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="yandex-verification" content="1a9f8b0340547a0f" />
     <meta charset="UTF-8">
-    <meta name="description" content="Сайт для начинающих аналитиков. Загрузите ваш Jupyter Notebook и получите подробный анализ.">
-     <meta name="keywords" content="анализ данных, Jupyter Notebook, Python, визуализация, обучение аналитике,наставник">
+    <meta name="description" content="Сайт для начинающих аналитиков. Загрузите ваш Jupyter Notebook и получите подробный анализ бесплатно." />
+    <meta name="keywords" content="анализ данных, Jupyter Notebook, Python, визуализация, обучение аналитике, наставник, бесплатный анализ" />
     <title>Анализ Jupyter Notebook онлайн</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/media/img/favicon.ico" type="image/x-icon">    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -23,36 +26,37 @@
         .content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start; /* İki başlığı hizalamak için */
+            align-items: flex-start;
             background-color: #ffffff;
             color: #333;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
-            width: 100%;
+            max-width: 1000px;
+            width: 90%;
         }
-        .form-section,
+        .form-section {
+            width: 40%;
+        }
         .description-section {
-            width: 47%;
+            width: 55%;
         }
         .form-section h1,
         .description-section h2 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: #007bff;
-            margin-bottom: 30px;
-            text-align: left; /* Başlıkları hizalar */
+            margin-bottom: 20px;
         }
         .form-control {
             border-radius: 10px;
-            height: 70px;
-            font-size: 1.1rem;
+            height: 45px;
+            font-size: 1rem;
         }
         .btn-primary {
             background-color: #007bff;
             border: none;
-            padding: 12px;
-            font-size: 1.2rem;
+            padding: 10px;
+            font-size: 1rem;
             border-radius: 5px;
             transition: background-color 0.3s ease;
             width: 100%;
@@ -60,13 +64,26 @@
         .btn-primary:hover {
             background-color: #0056b3;
         }
+        .btn-outline-primary {
+            border: 2px solid #007bff;
+            color: #007bff;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+        }
         .description-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.6;
         }
         .description-section ul {
             padding-left: 20px;
-            text-align: left; /* Liste elemanlarını sola hizalar */
         }
         .description-section ul li {
             margin-bottom: 10px;
@@ -75,7 +92,7 @@
             background-color: #0056b3;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
+            padding: 10px 0;
             width: 100%;
             position: absolute;
             bottom: 0;
@@ -93,7 +110,7 @@
 </head>
 <body>
     <div class="content">
-        <!-- Sol Taraf: Form -->
+        <!-- Giriş Formu -->
         <div class="form-section">
             <h1>Войти</h1>
             <form method="POST">
@@ -108,22 +125,27 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Войти</button>
             </form>
+            <hr>
+            <p class="mt-3">Нет аккаунта? 
+                <a href="{% url 'register' %}" class="btn btn-outline-primary mt-3">Зарегистрироваться</a>
+            </p>
         </div>
 
-        <!-- Sağ Taraf: Açıklama -->
+        <!-- Açıklama -->
         <div class="description-section">
-            <h2>О нашем сайте</h2>
-            <p>
-                Этот сайт создан для начинающих аналитиков, чтобы помочь им улучшить свои навыки анализа данных.
-                С его помощью вы можете:
-            </p>
+            <h2>Добро пожаловать в AnalyzeGenius!</h2>
+            <p>Этот сайт создан для всех, кто хочет улучшить свои навыки анализа данных — от начинающих до профессионалов. По сравнению с дорогими наставниками и курсами, наш сервис позволяет вам бесплатно получить профессиональную обратную связь и рекомендации.</p>
+            <p><b>Что вы получите?</b></p>
             <ul>
-                <li>Анализировать свои Jupyter Notebook файлы.</li>
-                <li>Получать обратную связь о своих сильных и слабых сторонах.</li>
-                <li>Узнать, какие навыки требуют улучшения.</li>
-                <li>Развивать профессиональные навыки анализа данных.</li>
+                <li>🚀 <b>Подробный анализ вашего Jupyter Notebook:</b> выявление ошибок, рекомендации по улучшению кода и структуры данных.</li>
+                <li>📊 <b>Оценка визуализации данных:</b> советы по созданию графиков, тепловых карт, гистограмм и интерактивных визуализаций.</li>
+                <li>📈 <b>Анализ рабочего процесса:</b> проверка EDA, корреляций, выбросов и разделения данных.</li>
+                <li>🧮 <b>Рекомендации по машинному обучению:</b> советы по использованию продвинутых алгоритмов, таких как XGBoost, LightGBM.</li>
+                <li>🔬 <b>Статистический анализ:</b> использование t-теста, ANOVA и других методов для выявления значимых взаимосвязей.</li>
+                <li>📚 <b>Персонализированные рекомендации:</b> советы для обучения и профессионального роста.</li>
+                <li>🔒 <b>Конфиденциальность:</b> ваши данные остаются только у вас, история загрузок не сохраняется.</li>
             </ul>
-            
+            <p><b>Зарегистрируйтесь прямо сейчас</b>, чтобы получить доступ к расширенным возможностям анализа и начать улучшать свои навыки уже сегодня!</p>
         </div>
     </div>
 
